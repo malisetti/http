@@ -2,6 +2,7 @@
     "name": "abbiya/http",
     "description": "Wrapper around Symfony Http Response and Exception objects",
     "keywords": [
+        "orno",
         "http",
         "httpfoundation"
     ],
