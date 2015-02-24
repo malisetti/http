@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class ExpectationFailedException extends HttpException
 {
@@ -16,6 +17,6 @@ class ExpectationFailedException extends HttpException
      */
     public function __construct($message = 'Expectation Failed', Exception $previous = null, $code = 0)
     {
-        parent::__construct(417, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_EXPECTATION_FAILED, $message, $previous, [], $code);
     }
 }

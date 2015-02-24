@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class TooManyRequestsException extends HttpException
 {
@@ -16,6 +17,6 @@ class TooManyRequestsException extends HttpException
      */
     public function __construct($message = 'Too Many Requests', Exception $previous = null, $code = 0)
     {
-        parent::__construct(429, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_TOO_MANY_REQUESTS, $message, $previous, [], $code);
     }
 }

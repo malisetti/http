@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class UnprocessableEntityException extends HttpException
 {
@@ -16,6 +17,6 @@ class UnprocessableEntityException extends HttpException
      */
     public function __construct($message = 'Unprocessable Entity', Exception $previous = null, $code = 0)
     {
-        parent::__construct(422, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_UNPROCESSABLE_ENTITY, $message, $previous, [], $code);
     }
 }

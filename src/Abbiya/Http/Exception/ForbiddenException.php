@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class ForbiddenException extends HttpException
 {
@@ -16,6 +17,6 @@ class ForbiddenException extends HttpException
      */
     public function __construct($message = 'Forbidden', Exception $previous = null, $code = 0)
     {
-        parent::__construct(403, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_FORBIDDEN, $message, $previous, [], $code);
     }
 }

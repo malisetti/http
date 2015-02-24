@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class UnauthorizedException extends HttpException
 {
@@ -16,6 +17,6 @@ class UnauthorizedException extends HttpException
      */
     public function __construct($message = 'Unauthorized', Exception $previous = null, $code = 0)
     {
-        parent::__construct(401, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_UNAUTHORIZED, $message, $previous, [], $code);
     }
 }

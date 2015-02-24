@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class MethodNotAllowedException extends HttpException
 {
@@ -21,6 +22,6 @@ class MethodNotAllowedException extends HttpException
             'Allow' => implode(', ', $allowed)
         ];
 
-        parent::__construct(405, $message, $previous, $headers, $code);
+        parent::__construct(Response::HTTP_METHOD_NOT_ALLOWED, $message, $previous, $headers, $code);
     }
 }

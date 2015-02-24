@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class GoneException extends HttpException
 {
@@ -16,6 +17,6 @@ class GoneException extends HttpException
      */
     public function __construct($message = 'Gone', Exception $previous = null, $code = 0)
     {
-        parent::__construct(410, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_GONE, $message, $previous, [], $code);
     }
 }

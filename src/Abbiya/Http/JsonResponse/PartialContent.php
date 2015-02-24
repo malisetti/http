@@ -11,6 +11,6 @@ class PartialContent extends JsonResponse
      */
     public function __construct($data = null, array $headers = [])
     {
-        parent::__construct($data, 206, $headers);
+        parent::__construct($data, JsonResponse::HTTP_PARTIAL_CONTENT, $headers);
     }
 }

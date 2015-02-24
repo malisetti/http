@@ -11,6 +11,6 @@ class NoContent extends JsonResponse
      */
     public function __construct(array $headers = [])
     {
-        parent::__construct(null, 204, $headers);
+        parent::__construct(null, JsonResponse::HTTP_NO_CONTENT, $headers);
     }
 }

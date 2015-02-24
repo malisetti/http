@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class ImATeapotException extends HttpException
 {
@@ -16,6 +17,6 @@ class ImATeapotException extends HttpException
      */
     public function __construct($message = 'I\'m a teapot', Exception $previous = null, $code = 0)
     {
-        parent::__construct(418, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_I_AM_A_TEAPOT, $message, $previous, [], $code);
     }
 }

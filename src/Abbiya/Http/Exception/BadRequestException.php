@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class BadRequestException extends HttpException
 {
@@ -16,6 +17,6 @@ class BadRequestException extends HttpException
      */
     public function __construct($message = 'Bad Request', Exception $previous = null, $code = 0)
     {
-        parent::__construct(400, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_BAD_REQUEST, $message, $previous, [], $code);
     }
 }

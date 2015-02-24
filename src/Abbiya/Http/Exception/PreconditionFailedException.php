@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class PreconditionFailedException extends HttpException
 {
@@ -16,6 +17,6 @@ class PreconditionFailedException extends HttpException
      */
     public function __construct($message = 'Precondition Failed', Exception $previous = null, $code = 0)
     {
-        parent::__construct(412, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_PRECONDITION_FAILED, $message, $previous, [], $code);
     }
 }

@@ -11,6 +11,6 @@ class ResetContent extends JsonResponse
      */
     public function __construct($data = null, array $headers = [])
     {
-        parent::__construct($data, 205, $headers);
+        parent::__construct($data, JsonResponse::HTTP_RESET_CONTENT, $headers);
     }
 }

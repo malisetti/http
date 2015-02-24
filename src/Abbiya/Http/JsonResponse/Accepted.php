@@ -11,6 +11,6 @@ class Accepted extends JsonResponse
      */
     public function __construct($data = null, array $headers = [])
     {
-        parent::__construct($data, 202, $headers);
+        parent::__construct($data, JsonResponse::HTTP_ACCEPTED, $headers);
     }
 }

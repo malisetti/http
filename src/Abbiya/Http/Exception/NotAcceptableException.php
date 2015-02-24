@@ -4,6 +4,7 @@ namespace Abbiya\Http\Exception;
 
 use Exception;
 use Abbiya\Http\Exception as HttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 class NotAcceptableException extends HttpException
 {
@@ -16,6 +17,6 @@ class NotAcceptableException extends HttpException
      */
     public function __construct($message = 'Not Acceptable', Exception $previous = null, $code = 0)
     {
-        parent::__construct(406, $message, $previous, [], $code);
+        parent::__construct(Response::HTTP_NOT_ACCEPTABLE, $message, $previous, [], $code);
     }
 }

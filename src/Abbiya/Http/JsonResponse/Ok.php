@@ -11,6 +11,6 @@ class Ok extends JsonResponse
      */
     public function __construct($data = null, array $headers = [])
     {
-        parent::__construct($data, 200, $headers);
+        parent::__construct($data, JsonResponse::HTTP_OK, $headers);
     }
 }
